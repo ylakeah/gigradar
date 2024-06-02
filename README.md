@@ -15,7 +15,6 @@ This project is a full-stack chat application built with modern web technologies
 - [Running the Application](#running-the-application)
 - [Environment Variables](#environment-variables)
 - [Docker Setup](#docker-setup)
-- [Deployment](#deployment)
 
 ## Project Structure
 
