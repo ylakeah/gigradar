@@ -1,0 +1,24 @@
+{
+  "private": true,
+  "author": "haekal yudhistira <haekal@paywake.com>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.3.7",
+    "@bytescale/sdk": "^3.39.0",
+    "antd": "^5.17.4",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "socket.io-client": "^4.7.5",
+    "umi": "^4.2.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "typescript": "^5.0.3"
+  }
+}
