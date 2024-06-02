@@ -1,0 +1,77 @@
+{
+  "/Users/haekaly/SourceTree/gigradar-super-chat/my-chat-app/back-end-lambdas": {
+    "versionSfCore": null,
+    "versionFramework": "4.0.30",
+    "isWithinCompose": false,
+    "composeOrgName": null,
+    "servicePath": "/Users/haekaly/SourceTree/gigradar-super-chat/my-chat-app/back-end-lambdas",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "chat-app",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs14.x",
+        "environment": {
+          "MONGODB_URI": "${env:MONGODB_URI}",
+          "JWT_SECRET": "<REDACTED>"
+        }
+      },
+      "functions": {
+        "registerUser": {
+          "handler": "src/registerUser.handler",
+          "events": [
+            {
+              "http": {
+                "path": "register",
+                "method": "post"
+              }
+            }
+          ]
+        },
+        "loginUser": {
+          "handler": "src/loginUser.handler",
+          "events": [
+            {
+              "http": {
+                "path": "login",
+                "method": "post"
+              }
+            }
+          ]
+        },
+        "changePassword": "<REDACTED>"
+      }
+    },
+    "serviceRawFile": "service: chat-app\n\nprovider:\n  name: aws\n  runtime: nodejs14.x\n  environment:\n    MONGODB_URI: ${env:MONGODB_URI}\n    JWT_SECRET: ${env:JWT_SECRET}\n\nfunctions:\n  registerUser:\n    handler: src/registerUser.handler\n    events:\n      - http:\n          path: register\n          method: post\n  loginUser:\n    handler: src/loginUser.handler\n    events:\n      - http:\n          path: login\n          method: post\n  changePassword:\n    handler: src/changePassword.handler\n    events:\n      - http:\n          path: change-password\n          method: post\n",
+    "command": [
+      "deploy"
+    ],
+    "options": {},
+    "error": {
+      "message": "AWS credentials appear to be invalid. Run \"serverless\" to set up AWS credentials, or learn more in our docs: http://slss.io/aws-creds-setup.",
+      "code": "AWS_CREDENTIALS_MISSING"
+    },
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "68c5af8b-a625-4721-ba12-f3b00e30d275",
+    "orgName": "haekal",
+    "userId": "zJpbPTTmH3nNqQFsVz",
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "haekal",
+    "subscription": null,
+    "userEmail": "haekal@paywake.com",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}

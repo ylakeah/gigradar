@@ -1,0 +1,34 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: haekal
+# "app" enables Serverless Framework Dashboard features and sharing them with other Services.
+app: chat-be
+service: chat-app
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  environment:
+    MONGODB_URI: ${env:MONGODB_URI}
+    JWT_SECRET: ${env:JWT_SECRET}
+
+functions:
+  registerUser:
+    handler: dist/registerUser.handler
+    events:
+      - http:
+          path: register
+          method: post
+  loginUser:
+    handler: dist/loginUser.handler
+    events:
+      - http:
+          path: login
+          method: post
+  changePassword:
+    handler: dist/changePassword.handler
+    events:
+      - http:
+          path: change-password
+          method: post
+plugins:
+  - serverless-offline
